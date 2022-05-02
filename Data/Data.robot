@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Test Suite Data
+Documentation         Test Suite Data
 
 
 *** Variables ***

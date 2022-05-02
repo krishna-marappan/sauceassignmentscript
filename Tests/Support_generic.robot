@@ -16,21 +16,21 @@ ${screenshotCount}    1
 *** Keywords ***
 
 Replace xpath and Input Text
-    [Documentation]                     Replace Text and Input
+    [Documentation]  Replace Text and Input
     [Arguments]                         ${xpath}  ${value}  ${value1}
     ${res}         					    Replace String	 ${xpath}	 replace 	${value}
     Scroll Element Into View            ${res}
     Input Text                          ${res}  ${value1}
 
 Replace xpath and click Web
-    [Documentation]                     Replace xpath and click Button
+    [Documentation]   Replace xpath and click Button
     [Arguments]                         ${xpath}  ${Name}
     ${Result}                           Replace String	 ${xpath} 	replace 	${Name}
     Scroll Element Into View            ${Result}
     Click Element                       ${Result}
 
 Validate field
-	[Documentation]						Validate field value
+	[Documentation]	 Validate field value
 	[Arguments]							${Value1}  ${Value2}
 	Scroll Element Into View            ${Value1}
 	${response}  Get Text               ${Value1}
@@ -38,7 +38,7 @@ Validate field
     [Return]    ${status}
 
 Take Screenshot
-    [Documentation]                     Taking screenshot at Test Level
+    [Documentation]  Taking screenshot at Test Level
     Capture page screenshot             ${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png
     ${screenshotCount}                  Evaluate  ${screenshotCount}+1
 	Set global variable                 ${screenshotCount}

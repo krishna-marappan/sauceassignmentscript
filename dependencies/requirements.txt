@@ -5,5 +5,3 @@ robotframework-pythonlibcore==3.0.0
 robotframework-seleniumlibrary==5.1.3
 robotframework-datadriver==1.6.0
 robotframework-imaplibrary==0.3.0
-robotframework-browser
-robotframework-pabot==2.1.0

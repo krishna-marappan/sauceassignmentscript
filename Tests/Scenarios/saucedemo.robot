@@ -1,5 +1,6 @@
 *** Settings ***
-Documentation       Verification of saucedemo website "https://www.saucedemo.com/"
+Documentation       Saucedemo website Testing using python robotframework
+...                 "https://www.saucedemo.com/"
 Test Teardown       Close all Browsers
 Resource            ../Supportsteps/Support_Web.robot
 

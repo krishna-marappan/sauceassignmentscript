@@ -26,7 +26,7 @@ user should be navigated to the Products page
     [Documentation]  verify the user navigated to the Products page
     ${url}                              Get Location
     ${status}=  Run Keyword And Return Status  Should Be Equal As Strings   ${url}  ${productpage}
-    Run keyword if    "${status}"=="True"
+    Run keyword if                      "${status}"=="True"
     ...  Log  User was navigated to the Products page
     Take Screenshot
 
@@ -48,7 +48,7 @@ user should be navigate to Cart Page
     click element                      ${cartlink}
 	${url}                             Get Location
     ${status}=  Run Keyword And Return Status  Should Be Equal As Strings   ${url}  ${cartpage}
-    Run keyword if    "${status}"=="True"
+    Run keyword if                     "${status}"=="True"
     ...  Log  User was navigated to the cart Page
     Take Screenshot
 
@@ -85,17 +85,17 @@ user able to get the list of price
 user able to verify if the selected product is checked out
     [Documentation]  verify the selected product
     ${status}  Validate field        ${itemname}  ${prductname}
-    Run keyword if    "${status}"=="True"   Log  The Selected product was checked out
+    Run keyword if                   "${status}"=="True"
+    ...  Log  The Selected product was checked out
     Take Screenshot
 
 user is able to verify that the thankyou page is displayed
     [Documentation]  verify that the thankyou page
-    ${status}   Validate field        ${title}    ${completetitle}
+    Validate field                   ${title}    ${completetitle}
+    Validate field                   ${header}   ${completeheader}
+    ${status}  Validate field        ${thanyou}  ${completetext}
     Take Screenshot
-    ${status1}  Validate field        ${header}   ${completeheader}
-    ${status2}  Validate field        ${thanyou}  ${completetext}
-    Take Screenshot
-    Run keyword if   "${status}"=="True"  and  "${status1}"=="True"  and  "${status2}"=="True"
+    Run keyword if   "${status}"=="True"
     ...  Log  Thankyou page was displayed successfully
     Take Screenshot
 

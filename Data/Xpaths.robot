@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Website Xpaths
+Documentation        Website Xpaths
 
 *** Variables ***
 
