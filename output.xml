@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.7 on win32)" generated="20220502 21:23:36.896" rpa="false">
+<suite id="s1" name="Saucedemo" source="C:\Users\851090\Downloads\Assignment\Tests\Scenarios\saucedemo.robot">
+<test id="s1-t1" name="ZUCITECH_TC001">
+<kw name="Given user to launch saucedemo website" library="Support_Web">
+<doc>launch saucedemo website by url</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${scaucedemourl}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20220502 21:23:42.009" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20220502 21:23:42.009" endtime="20220502 21:23:48.824"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 21:23:48.824" endtime="20220502 21:23:48.989"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:49.210" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_1.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:48.989" endtime="20220502 21:23:49.210"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:49.211" level="INFO">${screenshotCount} = 2</msg>
+<status status="PASS" starttime="20220502 21:23:49.210" endtime="20220502 21:23:49.211"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:49.211" level="INFO">${screenshotCount} = 2</msg>
+<status status="PASS" starttime="20220502 21:23:49.211" endtime="20220502 21:23:49.211"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:48.989" endtime="20220502 21:23:49.212"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:42.008" endtime="20220502 21:23:49.212"></status>
+</kw>
+<kw name="And user login in to the saucedemo" library="Support_Web">
+<doc>login in to the saucedemo using username and password</doc>
+<kw name="Replace xpath and Input Text" library="Support_generic">
+<doc>Replace Text and Input</doc>
+<arguments>
+<arg>${Input_Name}</arg>
+<arg>user-name</arg>
+<arg>${username}</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${value}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:49.214" level="INFO">${res} = //input[@name="user-name"]</msg>
+<status status="PASS" starttime="20220502 21:23:49.214" endtime="20220502 21:23:49.214"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:49.214" endtime="20220502 21:23:49.512"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${value1}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:49.513" level="INFO">Typing text 'standard_user' into text field '//input[@name="user-name"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:49.512" endtime="20220502 21:23:49.669"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:49.213" endtime="20220502 21:23:49.669"></status>
+</kw>
+<kw name="Replace xpath and Input Text" library="Support_generic">
+<doc>Replace Text and Input</doc>
+<arguments>
+<arg>${Input_Name}</arg>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${value}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:49.671" level="INFO">${res} = //input[@name="password"]</msg>
+<status status="PASS" starttime="20220502 21:23:49.670" endtime="20220502 21:23:49.671"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:49.671" endtime="20220502 21:23:49.967"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${value1}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:49.968" level="INFO">Typing text 'secret_sauce' into text field '//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:49.968" endtime="20220502 21:23:50.129"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:49.670" endtime="20220502 21:23:50.129"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:50.374" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_2.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:50.130" endtime="20220502 21:23:50.374"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:50.375" level="INFO">${screenshotCount} = 3</msg>
+<status status="PASS" starttime="20220502 21:23:50.375" endtime="20220502 21:23:50.375"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:50.376" level="INFO">${screenshotCount} = 3</msg>
+<status status="PASS" starttime="20220502 21:23:50.375" endtime="20220502 21:23:50.376"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:50.129" endtime="20220502 21:23:50.377"></status>
+</kw>
+<kw name="Replace xpath and click Web" library="Support_generic">
+<doc>Replace xpath and click Button</doc>
+<arguments>
+<arg>${Input_Name}</arg>
+<arg>login-button</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${Result}</var>
+</assign>
+<msg timestamp="20220502 21:23:50.379" level="INFO">${Result} = //input[@name="login-button"]</msg>
+<status status="PASS" starttime="20220502 21:23:50.378" endtime="20220502 21:23:50.380"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${Result}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:50.380" endtime="20220502 21:23:50.707"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Result}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:50.707" level="INFO">Clicking element '//input[@name="login-button"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:50.707" endtime="20220502 21:23:50.875"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:50.377" endtime="20220502 21:23:50.875"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:49.213" endtime="20220502 21:23:50.876"></status>
+</kw>
+<kw name="When user should be navigated to the Products page" library="Support_Web">
+<doc>verify the user navigated to the Products page</doc>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20220502 21:23:50.891" level="INFO">${url} = https://www.saucedemo.com/inventory.html</msg>
+<status status="PASS" starttime="20220502 21:23:50.881" endtime="20220502 21:23:50.891"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>${url}</arg>
+<arg>${productpage}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${productpage}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:50.891" endtime="20220502 21:23:50.892"></status>
+</kw>
+<msg timestamp="20220502 21:23:50.892" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220502 21:23:50.891" endtime="20220502 21:23:50.892"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status}"=="True"</arg>
+<arg>Log</arg>
+<arg>User was navigated to the Products page</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>User was navigated to the Products page</arg>
+</arguments>
+<msg timestamp="20220502 21:23:50.894" level="INFO">User was navigated to the Products page</msg>
+<status status="PASS" starttime="20220502 21:23:50.893" endtime="20220502 21:23:50.894"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:50.893" endtime="20220502 21:23:50.894"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.308" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_3.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:50.895" endtime="20220502 21:23:51.308"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.309" level="INFO">${screenshotCount} = 4</msg>
+<status status="PASS" starttime="20220502 21:23:51.308" endtime="20220502 21:23:51.309"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.310" level="INFO">${screenshotCount} = 4</msg>
+<status status="PASS" starttime="20220502 21:23:51.309" endtime="20220502 21:23:51.310"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:50.894" endtime="20220502 21:23:51.310"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:50.879" endtime="20220502 21:23:51.311"></status>
+</kw>
+<kw name="Then user add a product to the cart which has the second least price" library="Support_Web">
+<doc>Add a product to the cart which has the second least price</doc>
+<kw name="user able to get the list of price" library="Support_Web">
+<doc>Get the list of price in the product page</doc>
+<assign>
+<var>${list}</var>
+</assign>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{pricelist}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.314" level="INFO">@{pricelist} = [ ]</msg>
+<status status="PASS" starttime="20220502 21:23:51.313" endtime="20220502 21:23:51.314"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${itemprice}</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.342" level="INFO">${count} = 6</msg>
+<status status="PASS" starttime="20220502 21:23:51.314" endtime="20220502 21:23:51.342"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | ${count}+1 ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${itemprice})[${i}]</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.388" level="INFO">${res} = $29.99</msg>
+<status status="PASS" starttime="20220502 21:23:51.343" endtime="20220502 21:23:51.388"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${pricelist}</arg>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:51.388" endtime="20220502 21:23:51.388"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.343" endtime="20220502 21:23:51.388"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${itemprice})[${i}]</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.425" level="INFO">${res} = $9.99</msg>
+<status status="PASS" starttime="20220502 21:23:51.389" endtime="20220502 21:23:51.425"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${pricelist}</arg>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:51.425" endtime="20220502 21:23:51.426"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.388" endtime="20220502 21:23:51.426"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${itemprice})[${i}]</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.458" level="INFO">${res} = $15.99</msg>
+<status status="PASS" starttime="20220502 21:23:51.426" endtime="20220502 21:23:51.458"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${pricelist}</arg>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:51.458" endtime="20220502 21:23:51.458"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.426" endtime="20220502 21:23:51.459"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${itemprice})[${i}]</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.490" level="INFO">${res} = $49.99</msg>
+<status status="PASS" starttime="20220502 21:23:51.459" endtime="20220502 21:23:51.490"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${pricelist}</arg>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:51.490" endtime="20220502 21:23:51.491"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.459" endtime="20220502 21:23:51.491"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${itemprice})[${i}]</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.526" level="INFO">${res} = $7.99</msg>
+<status status="PASS" starttime="20220502 21:23:51.491" endtime="20220502 21:23:51.526"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${pricelist}</arg>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:51.526" endtime="20220502 21:23:51.527"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.491" endtime="20220502 21:23:51.527"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${itemprice})[${i}]</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.562" level="INFO">${res} = $15.99</msg>
+<status status="PASS" starttime="20220502 21:23:51.527" endtime="20220502 21:23:51.563"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${pricelist}</arg>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:51.563" endtime="20220502 21:23:51.563"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.527" endtime="20220502 21:23:51.563"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.342" endtime="20220502 21:23:51.564"></status>
+</kw>
+<msg timestamp="20220502 21:23:51.564" level="INFO">${list} = ['$29.99', '$9.99', '$15.99', '$49.99', '$7.99', '$15.99']</msg>
+<status status="PASS" starttime="20220502 21:23:51.313" endtime="20220502 21:23:51.564"></status>
+</kw>
+<kw name="Find The Second Least Price And Index" library="Support">
+<arguments>
+<arg>${list}</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+<var>${index}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.565" level="INFO">${price} = 9.99</msg>
+<msg timestamp="20220502 21:23:51.565" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20220502 21:23:51.564" endtime="20220502 21:23:51.565"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>The second lowest priced is ${price}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.566" level="INFO">The second lowest priced is 9.99</msg>
+<status status="PASS" starttime="20220502 21:23:51.565" endtime="20220502 21:23:51.566"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${itemname})[${index}]</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.596" level="INFO">${name} = Sauce Labs Bike Light</msg>
+<status status="PASS" starttime="20220502 21:23:51.566" endtime="20220502 21:23:51.596"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>The second-lowest-priced product name is ${name}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.597" level="INFO">The second-lowest-priced product name is Sauce Labs Bike Light</msg>
+<status status="PASS" starttime="20220502 21:23:51.597" endtime="20220502 21:23:51.597"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${prductname}</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.599" level="INFO">${prductname} = Sauce Labs Bike Light</msg>
+<status status="PASS" starttime="20220502 21:23:51.597" endtime="20220502 21:23:51.599"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.820" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_4.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:51.600" endtime="20220502 21:23:51.821"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.821" level="INFO">${screenshotCount} = 5</msg>
+<status status="PASS" starttime="20220502 21:23:51.821" endtime="20220502 21:23:51.822"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.822" level="INFO">${screenshotCount} = 5</msg>
+<status status="PASS" starttime="20220502 21:23:51.822" endtime="20220502 21:23:51.822"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.599" endtime="20220502 21:23:51.823"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${buttontext}</arg>
+<arg>replace</arg>
+<arg>Add to cart</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:51.823" level="INFO">${res} = //button[text()="Add to cart"]</msg>
+<status status="PASS" starttime="20220502 21:23:51.823" endtime="20220502 21:23:51.824"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>(${res})[${index}]</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.824" level="INFO">Clicking element '(//button[text()="Add to cart"])[2]'.</msg>
+<status status="PASS" starttime="20220502 21:23:51.824" endtime="20220502 21:23:51.911"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.311" endtime="20220502 21:23:51.911"></status>
+</kw>
+<kw name="When user should be navigate to Cart Page" library="Support_Web">
+<doc>user should be navigate to Cart Page</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${cartlink}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:51.916" level="INFO">Clicking element '//a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:51.916" endtime="20220502 21:23:52.003"></status>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20220502 21:23:52.010" level="INFO">${url} = https://www.saucedemo.com/cart.html</msg>
+<status status="PASS" starttime="20220502 21:23:52.003" endtime="20220502 21:23:52.010"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>${url}</arg>
+<arg>${cartpage}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${cartpage}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:52.011" endtime="20220502 21:23:52.011"></status>
+</kw>
+<msg timestamp="20220502 21:23:52.012" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220502 21:23:52.010" endtime="20220502 21:23:52.012"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status}"=="True"</arg>
+<arg>Log</arg>
+<arg>User was navigated to the cart Page</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>User was navigated to the cart Page</arg>
+</arguments>
+<msg timestamp="20220502 21:23:52.013" level="INFO">User was navigated to the cart Page</msg>
+<status status="PASS" starttime="20220502 21:23:52.013" endtime="20220502 21:23:52.013"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:52.012" endtime="20220502 21:23:52.013"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:52.272" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_5.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:52.014" endtime="20220502 21:23:52.272"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:52.273" level="INFO">${screenshotCount} = 6</msg>
+<status status="PASS" starttime="20220502 21:23:52.272" endtime="20220502 21:23:52.273"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:52.273" level="INFO">${screenshotCount} = 6</msg>
+<status status="PASS" starttime="20220502 21:23:52.273" endtime="20220502 21:23:52.274"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:52.013" endtime="20220502 21:23:52.274"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:51.915" endtime="20220502 21:23:52.274"></status>
+</kw>
+<kw name="Then user Check out the product by entering details" library="Support_Web">
+<doc>Checking out the product by entering details</doc>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${buttontext}</arg>
+<arg>replace</arg>
+<arg>Checkout</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:52.275" level="INFO">${res} = //button[text()="Checkout"]</msg>
+<status status="PASS" starttime="20220502 21:23:52.275" endtime="20220502 21:23:52.275"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:52.276" level="INFO">Clicking element '//button[text()="Checkout"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:52.275" endtime="20220502 21:23:52.356"></status>
+</kw>
+<kw name="Replace xpath and Input Text" library="Support_generic">
+<doc>Replace Text and Input</doc>
+<arguments>
+<arg>${Input_Name}</arg>
+<arg>firstName</arg>
+<arg>${fisname}</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${value}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:52.359" level="INFO">${res} = //input[@name="firstName"]</msg>
+<status status="PASS" starttime="20220502 21:23:52.358" endtime="20220502 21:23:52.359"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:52.359" endtime="20220502 21:23:52.640"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${value1}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:52.641" level="INFO">Typing text 'krishna' into text field '//input[@name="firstName"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:52.641" endtime="20220502 21:23:52.811"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:52.357" endtime="20220502 21:23:52.812"></status>
+</kw>
+<kw name="Replace xpath and Input Text" library="Support_generic">
+<doc>Replace Text and Input</doc>
+<arguments>
+<arg>${Input_Name}</arg>
+<arg>lastName</arg>
+<arg>${lasname}</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${value}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:52.815" level="INFO">${res} = //input[@name="lastName"]</msg>
+<status status="PASS" starttime="20220502 21:23:52.814" endtime="20220502 21:23:52.815"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:52.815" endtime="20220502 21:23:53.116"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${value1}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:53.118" level="INFO">Typing text 'Marappan' into text field '//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:53.117" endtime="20220502 21:23:53.274"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:52.812" endtime="20220502 21:23:53.275"></status>
+</kw>
+<kw name="Replace xpath and Input Text" library="Support_generic">
+<doc>Replace Text and Input</doc>
+<arguments>
+<arg>${Input_Name}</arg>
+<arg>postalCode</arg>
+<arg>${poscode}</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${value}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:53.278" level="INFO">${res} = //input[@name="postalCode"]</msg>
+<status status="PASS" starttime="20220502 21:23:53.277" endtime="20220502 21:23:53.278"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:53.278" endtime="20220502 21:23:53.566"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${value1}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:53.567" level="INFO">Typing text '123456' into text field '//input[@name="postalCode"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:53.566" endtime="20220502 21:23:53.706"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:53.275" endtime="20220502 21:23:53.706"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:53.888" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_6.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:53.707" endtime="20220502 21:23:53.888"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:53.889" level="INFO">${screenshotCount} = 7</msg>
+<status status="PASS" starttime="20220502 21:23:53.888" endtime="20220502 21:23:53.889"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:53.890" level="INFO">${screenshotCount} = 7</msg>
+<status status="PASS" starttime="20220502 21:23:53.889" endtime="20220502 21:23:53.890"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:53.706" endtime="20220502 21:23:53.890"></status>
+</kw>
+<kw name="Replace xpath and click Web" library="Support_generic">
+<doc>Replace xpath and click Button</doc>
+<arguments>
+<arg>${Input_Name}</arg>
+<arg>continue</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${Result}</var>
+</assign>
+<msg timestamp="20220502 21:23:53.891" level="INFO">${Result} = //input[@name="continue"]</msg>
+<status status="PASS" starttime="20220502 21:23:53.890" endtime="20220502 21:23:53.891"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${Result}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:53.891" endtime="20220502 21:23:54.182"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Result}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:54.182" level="INFO">Clicking element '//input[@name="continue"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:54.182" endtime="20220502 21:23:54.273"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:53.890" endtime="20220502 21:23:54.273"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:52.274" endtime="20220502 21:23:54.273"></status>
+</kw>
+<kw name="Then user assert the Product details" library="Support_Web">
+<doc>verifying the product checkout detail(i.e :CHECKOUT: OVERVIEW and CHECKOUT: COMPLETE!) pages</doc>
+<kw name="user able to verify if the selected product is checked out" library="Support_Web">
+<doc>verify the selected product</doc>
+<kw name="Validate field" library="Support_generic">
+<doc>Validate field value</doc>
+<arguments>
+<arg>${itemname}</arg>
+<arg>${prductname}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:54.276" endtime="20220502 21:23:54.561"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20220502 21:23:54.594" level="INFO">${response} = Sauce Labs Bike Light</msg>
+<status status="PASS" starttime="20220502 21:23:54.562" endtime="20220502 21:23:54.594"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:54.596" endtime="20220502 21:23:54.596"></status>
+</kw>
+<msg timestamp="20220502 21:23:54.596" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220502 21:23:54.595" endtime="20220502 21:23:54.596"></status>
+</kw>
+<msg timestamp="20220502 21:23:54.597" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220502 21:23:54.275" endtime="20220502 21:23:54.597"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status}"=="True"</arg>
+<arg>Log</arg>
+<arg>The Selected product was checked out</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>The Selected product was checked out</arg>
+</arguments>
+<msg timestamp="20220502 21:23:54.598" level="INFO">The Selected product was checked out</msg>
+<status status="PASS" starttime="20220502 21:23:54.598" endtime="20220502 21:23:54.598"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:54.597" endtime="20220502 21:23:54.598"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:54.799" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_7.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:54.599" endtime="20220502 21:23:54.799"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:54.800" level="INFO">${screenshotCount} = 8</msg>
+<status status="PASS" starttime="20220502 21:23:54.799" endtime="20220502 21:23:54.800"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:54.801" level="INFO">${screenshotCount} = 8</msg>
+<status status="PASS" starttime="20220502 21:23:54.800" endtime="20220502 21:23:54.801"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:54.598" endtime="20220502 21:23:54.801"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:54.275" endtime="20220502 21:23:54.801"></status>
+</kw>
+<kw name="user able to get the total price after the tax" library="Support_Web">
+<doc>total price after the tax</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${totalcost}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:54.802" endtime="20220502 21:23:55.100"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${totalcost}</arg>
+</arguments>
+<assign>
+<var>${cost}</var>
+</assign>
+<msg timestamp="20220502 21:23:55.132" level="INFO">${cost} = Total: $10.79</msg>
+<status status="PASS" starttime="20220502 21:23:55.100" endtime="20220502 21:23:55.132"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Price after tax is ${cost}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:55.133" level="INFO">Price after tax is Total: $10.79</msg>
+<status status="PASS" starttime="20220502 21:23:55.133" endtime="20220502 21:23:55.133"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:55.376" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_8.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:55.133" endtime="20220502 21:23:55.376"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:55.377" level="INFO">${screenshotCount} = 9</msg>
+<status status="PASS" starttime="20220502 21:23:55.376" endtime="20220502 21:23:55.377"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:55.378" level="INFO">${screenshotCount} = 9</msg>
+<status status="PASS" starttime="20220502 21:23:55.377" endtime="20220502 21:23:55.378"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:55.133" endtime="20220502 21:23:55.379"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:54.802" endtime="20220502 21:23:55.379"></status>
+</kw>
+<kw name="user able to get the payment information" library="Support_Web">
+<doc>Payment information</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${paymentinfo}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:55.380" endtime="20220502 21:23:55.667"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${paymentinfo}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220502 21:23:55.702" level="INFO">${res} = SauceCard #31337</msg>
+<status status="PASS" starttime="20220502 21:23:55.667" endtime="20220502 21:23:55.702"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Payment information ${res}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:55.703" level="INFO">Payment information SauceCard #31337</msg>
+<status status="PASS" starttime="20220502 21:23:55.703" endtime="20220502 21:23:55.704"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:55.920" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_9.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:55.705" endtime="20220502 21:23:55.920"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:55.921" level="INFO">${screenshotCount} = 10</msg>
+<status status="PASS" starttime="20220502 21:23:55.921" endtime="20220502 21:23:55.921"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:55.922" level="INFO">${screenshotCount} = 10</msg>
+<status status="PASS" starttime="20220502 21:23:55.922" endtime="20220502 21:23:55.922"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:55.704" endtime="20220502 21:23:55.922"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:55.379" endtime="20220502 21:23:55.923"></status>
+</kw>
+<kw name="Replace xpath and click Web" library="Support_generic">
+<doc>Replace xpath and click Button</doc>
+<arguments>
+<arg>${buttontext}</arg>
+<arg>Finish</arg>
+</arguments>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>replace</arg>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${Result}</var>
+</assign>
+<msg timestamp="20220502 21:23:55.924" level="INFO">${Result} = //button[text()="Finish"]</msg>
+<status status="PASS" starttime="20220502 21:23:55.924" endtime="20220502 21:23:55.924"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${Result}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:55.924" endtime="20220502 21:23:56.216"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Result}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:56.216" level="INFO">Clicking element '//button[text()="Finish"]'.</msg>
+<status status="PASS" starttime="20220502 21:23:56.216" endtime="20220502 21:23:56.295"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:55.923" endtime="20220502 21:23:56.296"></status>
+</kw>
+<kw name="user is able to verify that the thankyou page is displayed" library="Support_Web">
+<doc>verify that the thankyou page</doc>
+<kw name="Validate field" library="Support_generic">
+<doc>Validate field value</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>${completetitle}</arg>
+</arguments>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:56.299" endtime="20220502 21:23:56.599"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20220502 21:23:56.630" level="INFO">${response} = CHECKOUT: COMPLETE!</msg>
+<status status="PASS" starttime="20220502 21:23:56.599" endtime="20220502 21:23:56.630"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:56.632" level="FAIL">CHECKOUT: COMPLETE! != Checkout: Complete!</msg>
+<status status="FAIL" starttime="20220502 21:23:56.631" endtime="20220502 21:23:56.632"></status>
+</kw>
+<msg timestamp="20220502 21:23:56.632" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20220502 21:23:56.631" endtime="20220502 21:23:56.632"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:56.298" endtime="20220502 21:23:56.632"></status>
+</kw>
+<kw name="Validate field" library="Support_generic">
+<doc>Validate field value</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>${completeheader}</arg>
+</arguments>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:56.633" endtime="20220502 21:23:56.914"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20220502 21:23:56.944" level="INFO">${response} = THANK YOU FOR YOUR ORDER</msg>
+<status status="PASS" starttime="20220502 21:23:56.914" endtime="20220502 21:23:56.944"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:56.945" endtime="20220502 21:23:56.946"></status>
+</kw>
+<msg timestamp="20220502 21:23:56.946" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220502 21:23:56.945" endtime="20220502 21:23:56.947"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:56.633" endtime="20220502 21:23:56.947"></status>
+</kw>
+<kw name="Validate field" library="Support_generic">
+<doc>Validate field value</doc>
+<arguments>
+<arg>${thanyou}</arg>
+<arg>${completetext}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:56.949" endtime="20220502 21:23:57.233"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Value1}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20220502 21:23:57.261" level="INFO">${response} = Your order has been dispatched, and will arrive just as fast as the pony can get there!</msg>
+<status status="PASS" starttime="20220502 21:23:57.234" endtime="20220502 21:23:57.261"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${Value2}</arg>
+</arguments>
+<status status="PASS" starttime="20220502 21:23:57.262" endtime="20220502 21:23:57.262"></status>
+</kw>
+<msg timestamp="20220502 21:23:57.262" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220502 21:23:57.261" endtime="20220502 21:23:57.262"></status>
+</kw>
+<msg timestamp="20220502 21:23:57.263" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220502 21:23:56.947" endtime="20220502 21:23:57.263"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:57.493" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_10.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:57.263" endtime="20220502 21:23:57.493"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:57.494" level="INFO">${screenshotCount} = 11</msg>
+<status status="PASS" starttime="20220502 21:23:57.493" endtime="20220502 21:23:57.494"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:57.495" level="INFO">${screenshotCount} = 11</msg>
+<status status="PASS" starttime="20220502 21:23:57.495" endtime="20220502 21:23:57.495"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:57.263" endtime="20220502 21:23:57.496"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status}"=="True"</arg>
+<arg>Log</arg>
+<arg>Thankyou page was displayed successfully</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Thankyou page was displayed successfully</arg>
+</arguments>
+<msg timestamp="20220502 21:23:57.497" level="INFO">Thankyou page was displayed successfully</msg>
+<status status="PASS" starttime="20220502 21:23:57.496" endtime="20220502 21:23:57.497"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:57.496" endtime="20220502 21:23:57.497"></status>
+</kw>
+<kw name="Take Screenshot" library="Support_generic">
+<doc>Taking screenshot at Test Level</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}${/}${screenshot_dir}${/}${TEST NAME}_${screenshotCount}.png</arg>
+</arguments>
+<msg timestamp="20220502 21:23:57.712" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Output/Screenshot/ZUCITECH_TC001_11.png"&gt;&lt;img src="Output/Screenshot/ZUCITECH_TC001_11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220502 21:23:57.498" endtime="20220502 21:23:57.713"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${screenshotCount}+1</arg>
+</arguments>
+<assign>
+<var>${screenshotCount}</var>
+</assign>
+<msg timestamp="20220502 21:23:57.714" level="INFO">${screenshotCount} = 12</msg>
+<status status="PASS" starttime="20220502 21:23:57.713" endtime="20220502 21:23:57.714"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${screenshotCount}</arg>
+</arguments>
+<msg timestamp="20220502 21:23:57.715" level="INFO">${screenshotCount} = 12</msg>
+<status status="PASS" starttime="20220502 21:23:57.714" endtime="20220502 21:23:57.715"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:57.497" endtime="20220502 21:23:57.715"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:56.297" endtime="20220502 21:23:57.716"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:54.274" endtime="20220502 21:23:57.716"></status>
+</kw>
+<kw name="And user close all open browsers" library="Support_Web">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 21:23:57.717" endtime="20220502 21:24:04.604"></status>
+</kw>
+<status status="PASS" starttime="20220502 21:23:57.716" endtime="20220502 21:24:04.604"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 21:24:04.606" endtime="20220502 21:24:04.606"></status>
+</kw>
+<doc>Test Objective:To check out the product and assert the Product details at the end</doc>
+<tags>
+<tag>assignment1</tag>
+<tag>Test1</tag>
+</tags>
+<status status="PASS" starttime="20220502 21:23:42.006" endtime="20220502 21:24:04.607" critical="yes"></status>
+</test>
+<doc>Saucedemo website Testing using python robotframework
+"https://www.saucedemo.com/"</doc>
+<status status="PASS" starttime="20220502 21:23:36.909" endtime="20220502 21:24:04.617"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">assignment1</stat>
+<stat pass="1" fail="0">Test1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Saucedemo">Saucedemo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
